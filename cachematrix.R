@@ -20,10 +20,9 @@ makeCacheMatrix <- function(x = matrix()) {
     
     get <- function() x
   
-    ## setInv solves the input matrix and sets the value of inv in setInv's
-    ## parent environment
+    ## setInv sets the value of inv in setInv's parent environment
     
-    setInv <- function(solve) inv <<- solve(x)
+    setInv <- function(solve) inv <<- solve
     
     ## getInv returns the value of inv 
   
@@ -36,8 +35,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve retrieves the cached inverse of the matrix calculated in
-## makeCacheMatrix, if present. Otherwise, it finds the value of the input 
+## cacheSolve retrieves the cached inverse of the matrix 
+## if present. Otherwise, it retrieves the value of the input 
 ## matrix and solves it.
 
 cacheSolve <- function(x, ...) {
@@ -49,7 +48,7 @@ cacheSolve <- function(x, ...) {
     ## If inv exists in the cache, print a message and return inv
     
     if(!is.null(inv)) {
-      message("getting cached data")
+      print("getting cached data")
       return(inv)
     }
     
