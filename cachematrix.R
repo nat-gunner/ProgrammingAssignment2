@@ -22,7 +22,7 @@ makeCacheMatrix <- function(x = matrix()) {
   
     ## setInv sets the value of inv in setInv's parent environment
     
-    setInv <- function(solve) inv <<- solve
+    setInv <- function(cacheinv) inv <<- cacheinv
     
     ## getInv returns the value of inv 
   
@@ -48,7 +48,7 @@ cacheSolve <- function(x, ...) {
     ## If inv exists in the cache, print a message and return inv
     
     if(!is.null(inv)) {
-      print("getting cached data")
+      message("getting cached data")
       return(inv)
     }
     
