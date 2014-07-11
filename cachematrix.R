@@ -9,7 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
   
     inv <- NULL
   
-    ## Set the value of x and inv in the parent environment of the set function
+    ## Set the value of x and inv in the parent environment of the set function 
     
     set <- function(y){
       x <<- y
